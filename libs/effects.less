@@ -1,0 +1,153 @@
+/* CSS3 static effects								*/
+/* ------------------------------------------------	*/
+/* @with    http://code.google.com/p/perkins-less/  */
+/* @company carlipa.com								*/
+/* ------------------------------------------------ */
+
+/* All corners Radius for a div (From Perkins) */
+.radius(@radius: 5px) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -o-border-radius: @radius;
+  -ms-border-radius: @radius;
+  border-radius: @radius;
+}
+
+/* Chosen corners radius */
+#radius {
+
+	.top-left(@radius: 5px)		{ border-top-left-radius: @radius; -moz-border-radius-topleft: @radius; -webkit-border-top-left-radius: @radius; }
+	.top-right(@radius: 5px)	{ border-top-right-radius: @radius; -moz-border-radius-topright: @radius; -webkit-border-top-right-radius: @radius; }
+	.bottom-left(@radius: 5px)	{ border-bottom-left-radius: @radius; -moz-border-radius-bottomleft: @radius; -webkit-border-bottom-left-radius: @radius; }
+	.bottom-right(@radius: 5px)	{ border-bottom-right-radius: @radius; -moz-border-radius-bottomright: @radius; -webkit-border-bottom-right-radius: @radius; }
+
+}
+
+/* Box shadow (From Perkins) */
+.bs(@bsval: 0px 0px 0.83em #333; @due: 0 0 0 transparent) {
+	-moz-box-shadow: @bsval, @due;
+	-webkit-box-shadow: @bsval, @due;
+	-o-box-shadow: @bsval, @due;
+	-box-shadow: @bsval, @due;
+}
+
+/* Add an alphatransparency value to any background or border color (via Perkins & Elyse Holladay) */
+#alpha {
+  .background(@color: #fff; @alpha: 1) {
+    background-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+  }
+  .border(@color: #fff, @alpha: 1) {
+    border-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+    background-clip: padding-box;
+  }
+  .opacity(@alpha:1) {
+	opacity : @alpha; 
+    -moz-opacity : @alpha; 
+    /*-ms-filter: "alpha(opacity=10)";*/ /* IE 8 */ 
+    /*filter : alpha(opacity=10);*/ /* IE < 8 */
+  }
+}
+
+/* Gradient (From Perkins) */
+#gradient {
+  .h(@startColor: #555; @endColor: #333; @img: none) {
+    /* Legacy browsers */
+    background: @endColor, @img;
+    /* Recent browsers */
+    -o-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: auto auto !important;
+    background-size: 100% 100%;
+    background: @img, -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+    background: @img, -webkit-linear-gradient(right center, @startColor, @endColor);
+    background: @img, -moz-linear-gradient(right center, @startColor, @endColor);
+    background: @img, -o-linear-gradient(left,  @startColor,  @endColor);
+    background: @img, -khtml-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+    filter: e("progid:DXImageTransform.Microsoft.Gradient(StartColorStr='%d', EndColorStr='%d', GradientType=1)",@startColor,@endColor);
+    -ms-filter: e("progid:DXImageTransform.Microsoft.gradient(startColorStr='%d', EndColorStr='%d', GradientType=1))",@startColor,@endColor);
+  }
+  .v(@startColor: #555; @endColor: #333; @img: none) {
+    /* Legacy browsers */
+    background: @endColor, @img;
+    /* Recent browsers */
+    -o-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: auto auto !important;
+    background-size: 100% 100%;
+    background: @img, -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    background: @img, -webkit-linear-gradient(@startColor, @endColor);
+    background: @img, -moz-linear-gradient(@startColor, @endColor);
+    background: @img, -o-linear-gradient(top,  @startColor,  @endColor);
+    background: @img, -khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    filter: e("progid:DXImageTransform.Microsoft.Gradient(StartColorStr='%d', EndColorStr='%d', GradientType=0)",@startColor,@endColor);
+    -ms-filter: e("progid:DXImageTransform.Microsoft.gradient(startColorStr='%d', EndColorStr='%d', GradientType=0))",@startColor,@endColor);
+  }
+  .hline(@startColor: #B0BAC5; @midColor1: #9DA7B2; @midColor2: #919CA8; @endColor: #7E8A98; @img: none) {
+    background: @endColor, @img;
+    -o-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: auto auto !important;
+    background-size: 100% 100%;
+    background: @img, -moz-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
+    background: @img, -webkit-gradient(linear, left top, left bottom, color-stop(0%,@startColor), color-stop(50%,@midColor1), color-stop(51%,@midColor2), color-stop(100%,@endColor));
+    filter: e("progid:DXImageTransform.Microsoft.Gradient(StartColorStr='%d', EndColorStr='%d', GradientType=0)",@startColor,@endColor);
+    -ms-filter: e("progid:DXImageTransform.Microsoft.gradient(startColorStr='%d', EndColorStr='%d', GradientType=0))",@startColor,@endColor);
+  }
+}
+
+/* Rotation (From Perkins) */
+.rotate(@deg: -45deg) {
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  transform: rotate(@deg);
+}
+
+/* ~ End Perkins methods ~ */
+
+/* Double border (Julien) */
+#double-border {
+	.all(@color1; @color2; @width:1px)		{ .bs(inset 0px 0px 0px @width @color1); border: @width solid @color2; }
+	.bottom(@color1; @color2; @width:1px)	{ .bs(inset 0px -@width 0px 0px @color1); border-bottom: @width solid @color2; }
+	.top(@color1; @color2; @width:1px)		{ .bs(inset 0px @width 0px 0px @color1); border-top: @width solid @color2; }
+	.left(@color1; @color2; @width:1px)		{ .bs(inset @width 0px 0px 0px @color1); border-left: @width solid @color2; }
+	.right(@color1; @color2; @width:1px)	{ .bs(inset -@width 0px 0px 0px @color1); border-right: @width solid @color2; }
+}
+
+/* Draw a box with a gradient and a border for a concave effect (Julien) */
+.concave(@bg-color; @border-color; @radius:10px) {
+	#gradient > .v(darken(@bg-color, 10%); @bg-color);
+	.bs(inset 0px -1px 0px 0px @border-color);
+	.radius(@radius);
+}
+
+/* Draw a box with a gradient and a border for a convex effect (Julien) */
+.convex(@bg-color; @border-color:transparent; @shadow:none; @radius:10px) {
+	#gradient > .v(@bg-color; darken(@bg-color, 15%));
+	border: 1px solid @border-color;
+	.bs(@shadow);
+	.radius(@radius);
+}
+
+/* Adding a background with noise (Julien) */
+.noised-background(@bg-color:grey; @shadow:none) {
+
+	background-color: @bg-color;
+	background-image: url("{@lib-images-url}/noise.png");
+	.bs(@shadow);
+}
+
+/* Add a glossy transparent gradient over a DIV */
+.glossy-gradient(@fromColor: rgba(255, 255, 255, 0); @toColor: rgba(255, 255, 255, 0.2); @height:50%) {
+
+	position: relative;
+	&:before { 
+		#gradient > .v(@fromColor; @toColor);
+	    width: 100%;
+		height: @height;
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: '';
+	}
+
+}

@@ -1,0 +1,10 @@
+/* Draw a CSS triangle */
+.triangle(@color; @width) {
+	.relative;
+	width:0px;
+	height:0px;
+	border-color:transparent transparent @color;
+	border-style: solid;
+	border-width:0px @width @width @width;
+	font-size:0;
+}

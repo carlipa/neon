@@ -1,0 +1,36 @@
+/* Layout           								*/
+/* ------------------------------------------------	*/
+/* @company carlipa.com								*/
+/* ------------------------------------------------ */
+
+/* Absolute blocks */
+.top-left(@top:0; @left:0) { 
+	top: @top;
+	left: @left;
+	.absolute;
+}
+.bottom-left(@bottom:0; @left:0) {
+	bottom: @top;
+	left: @left;
+	.absolute;
+}
+.top-right(@top:0; @right:0) { 
+	top: @top;
+	right: @right;
+	.absolute;
+}
+.bottom-right(@bottom:0; @right:0) {
+	bottom: @top;
+	right: @right;
+	.absolute;
+}
+
+/* First and last elements w/out margins */
+.first { 
+	margin-left: 0; 
+	margin-top: 0; 
+}
+.last { 
+	margin-bottom: 0; 
+	margin-right: 0; 
+}
