@@ -7,10 +7,10 @@
 	.inline-block();
 	.relative;
 
-	&:after { 
-		.absolute; 
-		width: @size; 
-		height: @size; 
+	&:after {
+		.absolute;
+		width: @size;
+		height: @size;
 		top:0;
 		left:0;
 		content: '';
@@ -21,7 +21,8 @@
 }
 
 /* Element with an icon */
-.ico { 
+//todo : too much css impact -> namespaced 'ne-ico' / refactored for inheritance
+.ne-ico {
 
 	/* background-image to override by sprite image to use */
 

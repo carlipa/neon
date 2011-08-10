@@ -8,9 +8,18 @@
 @-webkit-keyframes fade-out-threequarter { 0% { opacity: 1; } 100% { opacity: 0.25; } }
 
 /* Animation */
-.animate(@name; @duration:1s) {
+.animate(@name; @duration:1.5s; @count:infinite; @timing-function: ease-in-out; @direction: normal) {
 	-webkit-animation-name: @name;
 	-webkit-animation-duration: @duration;
+	-webkit-animation-iteration-count: @count;
+	-webkit-animation-timing-function: @timing-function;
+    -webkit-animation-direction: @direction;
+
+	-moz-animation-name: @name;
+	-moz-animation-duration: @duration;
+	-moz-animation-iteration-count: @count;
+    -moz-animation-timing-function: @timing-function;
+    -moz-animation-direction: @direction;
 }
 
 /* Fade effects */
