@@ -1,27 +1,31 @@
-form {
+#ne {
 
-	/* Text input container */
-	.input {
+	form {
 
-		input {
-			width: 96%;
-			padding:7px 2% 7px 2%;
-			font-size: @fontsize-default;
+		/* Text input container */
+		.input {
+
+			input {
+				width: 96%;
+				padding:7px 2% 7px 2%;
+				font-size: @fontsize-default;
+			}
+
 		}
 
-	}
+		/* Submit container */
+		.submit {
+			text-align: right;
+			button, input { margin-top:10px; }
+		}
 
-	/* Submit container */
-	.submit { 
-		text-align: right;
-		button, input { margin-top:10px; }
-	}
+		/* Labeled div containing label + input */
+		.labeled {
+			margin: 0 0 10px 0;
+			label { .inline-block; width: 30%; vertical-align: middle; .bold; font-size: @fontsize-s; &:after { content: ' :' } }
+			span.wrapper { .inline-block; width: 70%; }
+		}
 
-	/* Labeled div containing label + input */
-	.labeled {
-		margin: 0 0 10px 0;
-		label { .inline-block; width: 30%; vertical-align: middle; .bold; font-size: @fontsize-s; &:after { content: ' :' } }
-		span.wrapper { .inline-block; width: 70%; }
 	}
 
 }
