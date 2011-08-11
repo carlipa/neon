@@ -3,8 +3,14 @@
 /* @company carlipa.com								*/
 /* ------------------------------------------------ */
 
+.box-sizing(@style: content-box) {
+	-webkit-box-sizing: @style;
+	-moz-box-sizing: @style;
+	box-sizing: @style;
+}
+
 /* Absolute blocks */
-.top-left(@top:0; @left:0) { 
+.top-left(@top:0; @left:0) {
 	top: @top;
 	left: @left;
 	.absolute;
@@ -14,7 +20,7 @@
 	left: @left;
 	.absolute;
 }
-.top-right(@top:0; @right:0) { 
+.top-right(@top:0; @right:0) {
 	top: @top;
 	right: @right;
 	.absolute;
@@ -26,11 +32,11 @@
 }
 
 /* First and last elements w/out margins */
-.first { 
-	margin-left: 0; 
-	margin-top: 0; 
+.first {
+	margin-left: 0;
+	margin-top: 0;
 }
-.last { 
-	margin-bottom: 0; 
-	margin-right: 0; 
+.last {
+	margin-bottom: 0;
+	margin-right: 0;
 }
