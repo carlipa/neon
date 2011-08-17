@@ -3,18 +3,19 @@
 	/* Text input container */
 	.input {
 
-		input {
+		input, textarea {
 			width: 96%;
 			padding:7px 2% 7px 2%;
 			font-size: @fontsize-default;
 		}
+		input.tiny { width: 80px; }
 
 	}
 
 	/* Submit container */
 	.submit {
 		text-align: right;
-		button, input { margin-top:10px; }
+		button, input, a { margin-top:10px; }
 	}
 
 	/* Labeled div containing label + input */
@@ -23,5 +24,4 @@
 		label { .inline-block; width: 30%; vertical-align: middle; .bold; font-size: @fontsize-s; &:after { content: ' :' } }
 		span.wrapper { .inline-block; width: 70%; }
 	}
-
 }
