@@ -1,5 +1,5 @@
 /* Add an icon before a link, span, div, ... */
-#icon(@size: 20px; @padding: 0 0 0 30px; @ico-margin: 0 0 0 0; @opacity:1) {
+#ne-icon(@size: 20px; @padding: 0 0 0 30px; @ico-margin: 0 0 0 0; @opacity:1) {
 
 	height: @size;
 	line-height: @size;
@@ -25,11 +25,11 @@
 .ne-ico {
 
 	/* Default style */
-	#icon;
+	#ne-icon;
 
 	/* Variants */
-	&.ico-right { #icon(20px; 0 30px 0 0 !important); &:after { left:auto; right:0; } }
-	&.button { #icon(20px; 2px 15px 2px 30px !important; 2px 0 0 4px; .7); }	/* Default icon for a button */
-	&.button-iconly { #icon(20px; 2px 13px !important; 2px 0 0 2px; .7); }		/* Icon only button */
+	&.ne-ico-right { #ne-icon(20px; 0 30px 0 0 !important); &:after { left:auto; right:0; } }
+	&.ne-button { #ne-icon(20px; 2px 15px 2px 30px !important; 2px 0 0 4px; .7); }		/* Default icon for a button */
+	&.ne-button-iconly { #ne-icon(20px; 2px 13px !important; 2px 0 0 2px; .7); }		/* Icon only button */
 
 }
