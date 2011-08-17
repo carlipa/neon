@@ -23,13 +23,11 @@
 /* Element with an icon */
 .ico { 
 
-	/* background-image to override by sprite image to use */
-
 	/* Default style */
 	#icon;
 
 	/* Variants */
-	&.ico-right { /* #icon(...) */ }
+	&.ico-right { #icon(20px; 0 30px 0 0 !important); &:after { left:auto; right:0; } }
 	&.button { #icon(20px; 2px 15px 2px 30px !important; 2px 0 0 4px; .7); }	/* Default icon for a button */
 	&.button-iconly { #icon(20px; 2px 13px !important; 2px 0 0 2px; .7); }		/* Icon only button */
 
