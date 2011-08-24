@@ -1,11 +1,13 @@
 /* CSS 3 Keyframes and animations */
 
 /* Keyframes */
-@-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-@-webkit-keyframes fade-out { 0% { opacity: 1; } 100% { opacity: 0; } }
-@-webkit-keyframes fade-out-quarter { 0% { opacity: 1; } 100% { opacity: 0.75; } }
-@-webkit-keyframes fade-out-half { 0% { opacity: 1; } 100% { opacity: 0.5; } }
-@-webkit-keyframes fade-out-threequarter { 0% { opacity: 1; } 100% { opacity: 0.25; } }
+@-webkit-keyframes fade-in { 0% { #alpha > .opacity(0); } 100% { #alpha > .opacity(1); } }
+@-webkit-keyframes fade-out { 0% { #alpha > .opacity(1); } 100% { #alpha > .opacity(0); } }
+@-webkit-keyframes fade-out-quarter { 0% { #alpha > .opacity(1); } 100% { #alpha > .opacity(.75); } }
+@-webkit-keyframes fade-out-half { 0% { #alpha > .opacity(1); } 100% { #alpha > .opacity(.5); } }
+@-webkit-keyframes fade-out-threequarter { 0% { #alpha > .opacity(1); } 100% { #alpha > .opacity(.25); } }
+
+@-webkit-keyframes fade-in-slide { 0% { #alpha > .opacity(0); margin-top:-40px; } 100% { #alpha > .opacity(1); } }
 
 /* Animation */
 .animate(@name; @duration:1.5s; @count:infinite; @timing-function: ease-in-out; @direction: normal) {
@@ -20,12 +22,16 @@
 	-moz-animation-iteration-count: @count;
     -moz-animation-timing-function: @timing-function;
     -moz-animation-direction: @direction;
+	
+	//animation-iteration ...
 }
 
 /* Fade effects */
-.fade-in(@duration:1s)					{ .animate(fade-in; @duration);	#alpha > .opacity(1); }
+.fade-in(@duration:1s)					{ .animate(fade-in; @duration; 1; ease-in); #alpha > .opacity(1); }
 
-.fade-out(@duration:1s)					{ .animate(fade-out; @duration); #alpha > .opacity(0); }
-.fade-out-quarter(@duration:1s)			{ .animate(fade-out-quarter; @duration); #alpha > .opacity(0.75); }
-.fade-out-half(@duration:1s)			{ .animate(fade-out-half; @duration); #alpha > .opacity(0.5); }
-.fade-out-threequarter(@duration:1s)	{ .animate(fade-out-threequarter; @duration); #alpha > .opacity(0.25); }
+.fade-out(@duration:1s)					{ .animate(fade-out; @duration; 1; ease-out); #alpha > .opacity(0); }
+.fade-out-quarter(@duration:1s)			{ .animate(fade-out-quarter; @duration; 1; ease-out); #alpha > .opacity(0.75); }
+.fade-out-half(@duration:1s)			{ .animate(fade-out-half; @duration; 1; ease-out); #alpha > .opacity(0.5); }
+.fade-out-threequarter(@duration:1s)	{ .animate(fade-out-threequarter; @duration; 1; ease-out); #alpha > .opacity(0.25); }
+
+.fade-in-slide(@duration:1s)			{ .animate(fade-in-slide; @duration; 1; ease-in); }
