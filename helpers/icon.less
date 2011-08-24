@@ -1,34 +1,34 @@
-/* Add an icon before a link, span, div, ... */
-#ne-icon(@size: 20px; @padding: 0 0 0 30px; @ico-margin: 0 0 0 0; @opacity:1) {
+/* Element with an icon */
+#ne-icon {
 
-	height: @size;
-	line-height: @size;
-	padding: @padding;
-	.inline-block();
-	.relative;
+	/* Make an icon (default left) */
+	.draw(@size: 20px; @padding: 0 0 0 30px; @ico-margin: 0 0 0 0; @opacity: 1) {
 
-	&:after {
-		.absolute;
-		width: @size;
 		height: @size;
-		top:0;
-		left:0;
-		content: '';
-		margin: @ico-margin;
-		#alpha > .opacity(@opacity);
+		line-height: @size;
+		padding: @padding;
+		.inline-block();
+		.relative;
+
+		&:after {
+			.absolute;
+			width: @size;
+			height: @size;
+			top:0;
+			left:0;
+			content: '';
+			margin: @ico-margin;
+			#alpha > .opacity(@opacity);
+		}
+
 	}
 
-}
+	/* Right icon */
+	.right(@size: 20px; @padding: 0 30px 0 5px) {
 
-/* Element with an icon */
-.ne-ico {
+		#ne-icon > .draw(@size; @padding); 
+		&:after { left:auto; right:0; }
 
-	/* Default style */
-	#ne-icon;
-
-	/* Variants */
-	&.ne-ico-right { #ne-icon(20px; 0 30px 0 0 !important); &:after { left:auto; right:0; } }
-	&.ne-button { #ne-icon(20px; 2px 15px 2px 30px !important; 2px 0 0 4px; .7); }		/* Default icon for a button */
-	&.ne-button-iconly { #ne-icon(20px; 2px 13px !important; 2px 0 0 2px; .7); }		/* Icon only button */
+	}
 
 }

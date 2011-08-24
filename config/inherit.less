@@ -1,6 +1,13 @@
-/* button.less */
+/* Buttons default inheritance */
+.ne-button { #ne-button > .draw; }
+.ne-button-iconly { #ne-button > .iconly; }
+.ne-buttons { #ne-buttons; }
 
-.button { .ne-button(); }
+/* Icons default inheritance */
+.ne-icon { #ne-icon > .draw; }
+.ne-icon-right { #ne-icon > .right; }
 
-.buttons { .ne-buttons(); }
-
+/* Forms */
+.ne-input { #ne-form > .input; }
+.ne-labeled { #ne-form > .labeled; }
+.ne-submit { #ne-form > .submit; }
