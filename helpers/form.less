@@ -24,4 +24,19 @@
 		label { .inline-block; width: 30%; vertical-align: middle; .bold; font-size: @fontsize-s; &:after { content: ' :' } }
 		span.wrapper { .inline-block; width: 70%; }
 	}
+
+	.labeled-left {
+		label { .inline-block; width: 40%; vertical-align: middle; .bold; font-size: @fontsize-s; &:after { content: ' :' } }
+		span.wrapper { .inline-block; width: 60%; }	
+		width: 50%;
+		.inline-block;
+	}
+
+	.labeled-right {
+		label { width: 40%; inline-block; vertical-align: middle; .bold; font-size: @fontsize-s; &:after { content: ' :' } }
+		span.wrapper { .inline-block; width: 60%; }
+		width: 45%;
+		margin-left:4%;
+		.inline-block;
+	}
 }
