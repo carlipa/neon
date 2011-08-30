@@ -1,4 +1,4 @@
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
     width: 12px;
 	background:#fff;
 }
@@ -9,4 +9,87 @@
 
 ::-webkit-scrollbar-thumb {
     background: grey;
+}*/
+
+/* http://www.screenfeed.fr/blog/personnaliser-les-scrollbars-webkit-0366 */
+
+::-webkit-scrollbar {									/* Scrollbars */
+	width: 14px;
+	height: 14px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	margin-left :10px;
 }
+::-webkit-scrollbar-track-piece {						/* Fond */
+	background: transparent none;
+	border: solid 4px transparent;
+	border-right-width: 8px;
+	margin: 4px;
+}
+::-webkit-scrollbar-track-piece:horizontal {			/* Fond pour la barre du bas */
+	border-right-width: 4px;
+	border-bottom-width: 8px;
+}
+::-webkit-scrollbar-thumb {								/* Barre */
+	border: solid 0 transparent;
+	border-right-width: 4px;
+	-webkit-border-radius: 5px;
+	-webkit-border-top-right-radius: 9px 5px;
+	-webkit-border-bottom-right-radius: 9px 5px;
+	-webkit-box-shadow: inset 0 0 0 1px rgb(161,161,161), inset 0 0 0 6px rgb(188,188,188);
+}
+::-webkit-scrollbar-thumb:hover {						/* Barre */
+	-webkit-box-shadow: inset 0 0 0 1px rgb(161,161,161), inset 0 0 0 6px rgb(161,161,161);
+}
+::-webkit-scrollbar-thumb:horizontal {					/* Barre du bas */
+	border-right-width: 0;
+	border-bottom-width: 4px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px 9px;
+	-webkit-border-bottom-left-radius: 5px 9px;
+}
+
+
+/*
+::-webkit-scrollbar-corner {							
+	background: #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+}
+
+
+::-webkit-scrollbar-button {						
+	height: 26px;
+	background: url(images/webkit-arrows-vert.png) 1px 50% no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+}
+::-webkit-scrollbar-button:increment {					
+	background-position: -19px 50%;
+}
+::-webkit-scrollbar-button:horizontal {					
+	width: 26px;
+	background: url(images/webkit-arrows-horiz.png) 50% 1px no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+}
+::-webkit-scrollbar-button:horizontal:increment {		
+	background-position: 50% -19px;
+}*/
+/*
+
+body ::-webkit-scrollbar-button:horizontal:decrement {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,255,255,.1)), color-stop(100%, rgba(255,255,255,.1))) 0 0 repeat, url(images/webkit-arrows-horiz.png) 50% 1px no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: -webkit-linear-gradient(top, rgba(255,255,255,.1), rgba(255,255,255,.1)) 0 0 repeat, url(images/webkit-arrows-horiz.png) 50% 1px no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)) 0 0 repeat, url(images/webkit-arrows-horiz.png) 50% 1px no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+}
+body ::-webkit-scrollbar-button:horizontal:increment {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,255,255,.1)), color-stop(100%, rgba(255,255,255,.1))) 0 0 repeat, url(images/webkit-arrows-horiz.png) 50% -19px no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: -webkit-linear-gradient(top, rgba(255,255,255,.1), rgba(255,255,255,.1)) 0 0 repeat, url(images/webkit-arrows-horiz.png) 50% -19px no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)) 0 0 repeat, url(images/webkit-arrows-horiz.png) 50% -19px no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	-webkit-border-radius: 0 0 6px 0;
+}
+body ::-webkit-scrollbar-button:vertical:decrement {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,255,255,.2)), color-stop(100%, rgba(255,255,255,.1))) 0 0 repeat, url(images/webkit-arrows-vert.png) 1px 50% no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: -webkit-linear-gradient(top, rgba(255,255,255,.1), rgba(255,255,255,.1)) 0 0 repeat, url(images/webkit-arrows-vert.png) 1px 50% no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)) 0 0 repeat, url(images/webkit-arrows-vert.png) 1px 50% no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+}
+body ::-webkit-scrollbar-button:vertical:increment {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,255,255,.2)), color-stop(100%, rgba(255,255,255,.1))) 0 0 repeat, url(images/webkit-arrows-vert.png) -19px 50% no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: -webkit-linear-gradient(top, rgba(255,255,255,.1), rgba(255,255,255,.1)) 0 0 repeat, url(images/webkit-arrows-vert.png) -19px 50% no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)) 0 0 repeat, url(images/webkit-arrows-vert.png) -19px 50% no-repeat, #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	-webkit-border-radius: 0 0 6px 0;
+}*/
