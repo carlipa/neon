@@ -21,3 +21,19 @@
 	-moz-user-select: @select;
 	user-select: @select;
 }
+
+/* Simulate HR with text v-centered */
+.hr-text(@color: #000; @hr: #000; @bg: #fff) {
+	height: 2px;
+	background-color: @hr;
+	text-align: left;
+	margin:5px 0 10px 0;
+	span {
+		text-align: left;
+		color: @color;
+		background-color: @bg;
+		position: relative;
+		top: -7px;
+		padding-right: 7px;
+	}
+}
