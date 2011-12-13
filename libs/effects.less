@@ -13,11 +13,7 @@
   border-radius: @radius;
 }
 .border-radius(@radius: 5px) {
-  -moz-border-radius: @radius;
-  -webkit-border-radius: @radius;
-  -o-border-radius: @radius;
-  -ms-border-radius: @radius;
-  border-radius: @radius;
+	.radius(@radius);
 }
 
 /* Chosen corners radius */
@@ -38,10 +34,7 @@
 	-box-shadow: @bsval, @due;
 }
 .box-shadow(@bsval: 0px 0px 0.83em #333; @due: 0 0 0 transparent) {
-	-moz-box-shadow: @bsval, @due;
-	-webkit-box-shadow: @bsval, @due;
-	-o-box-shadow: @bsval, @due;
-	-box-shadow: @bsval, @due;
+	.bs(@bsval; @due);
 }
 
 /* Add an alphatransparency value to any background or border color (via Perkins & Elyse Holladay) */
