@@ -1,45 +1,3 @@
-/* CSS 3 Keyframes and animations */
-
-/* ~ OLD CONTENT @deprecated -> @remove ~ */
-@-webkit-keyframes fade-in { 0% { #alpha > .opacity(0); } 100% { #alpha > .opacity(1); } }
-@-webkit-keyframes fade-in-half { 0% { #alpha > .opacity(0.5); } 100% { #alpha > .opacity(1); } }
-@-webkit-keyframes fade-out { 0% { #alpha > .opacity(1); } 100% { #alpha > .opacity(0); } }
-@-webkit-keyframes fade-out-quarter { 0% { #alpha > .opacity(1); } 100% { #alpha > .opacity(.75); } }
-@-webkit-keyframes fade-out-half { 0% { #alpha > .opacity(1); } 100% { #alpha > .opacity(.5); } }
-@-webkit-keyframes fade-out-threequarter { 0% { #alpha > .opacity(1); } 100% { #alpha > .opacity(.25); } }
-
-@-webkit-keyframes fade-in-slide { 0% { #alpha > .opacity(0); margin-top:-40px; } 100% { #alpha > .opacity(1); } }
-
-/* Animation */
-.animate(@name; @duration:1.5s; @count:infinite; @timing-function: ease-in-out; @direction: normal) {
-	-webkit-animation-name: @name;
-	-webkit-animation-duration: @duration;
-	-webkit-animation-iteration-count: @count;
-	-webkit-animation-timing-function: @timing-function;
-    -webkit-animation-direction: @direction;
-
-	-moz-animation-name: @name;
-	-moz-animation-duration: @duration;
-	-moz-animation-iteration-count: @count;
-    -moz-animation-timing-function: @timing-function;
-    -moz-animation-direction: @direction;
-
-	//animation-iteration ...
-}
-
-/* Fade effects */
-.fade-in(@duration:1s)					{ .animate(fade-in; @duration; 1; ease-in); #alpha > .opacity(1); }
-.fade-in-half(@duration:1s)				{ .animate(fade-in-half; @duration; 1; ease-in); #alpha > .opacity(1); }
-
-.fade-out(@duration:1s)					{ .animate(fade-out; @duration; 1; ease-out); #alpha > .opacity(0); }
-.fade-out-quarter(@duration:1s)			{ .animate(fade-out-quarter; @duration; 1; ease-out); #alpha > .opacity(0.75); }
-.fade-out-half(@duration:1s)			{ .animate(fade-out-half; @duration; 1; ease-out); #alpha > .opacity(0.5); }
-.fade-out-threequarter(@duration:1s)	{ .animate(fade-out-threequarter; @duration; 1; ease-out); #alpha > .opacity(0.25); }
-
-.fade-in-slide(@duration:1s)			{ .animate(fade-in-slide; @duration; 1; ease-in); }
-
-/* ~ END OLD CONTENT @deprecated -> @remove ~ */
-
 /*
 Animate.css - http://daneden.me/animate
 LICENSED UNDER THE  MIT LICENSE (MIT)
@@ -47,9 +5,12 @@ LICENSED UNDER THE  MIT LICENSE (MIT)
 Copyright (c) 2011 Dan Eden
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
+
 .animated {
 	-webkit-animation: 1s ease;
 	   -moz-animation: 1s ease;
@@ -72,28 +33,28 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 @-webkit-keyframes flash {
-	0% {opacity: 1;} 50% {opacity: 1;} 100% {opacity: 1;}
-	25% {opacity: 0;} 75% {opacity: 0;}
+	0%, 50%, 100% {opacity: 1;}
+	25%, 75% {opacity: 0;}
 }
 
 @-moz-keyframes flash {
-	0% {opacity: 1;} 50% {opacity: 1;} 100% {opacity: 1;}
-	25% {opacity: 0;} 75% {opacity: 0;}
+	0%, 50%, 100% {opacity: 1;}
+	25%, 75% {opacity: 0;}
 }
 
 @-ms-keyframes flash {
-	0% {opacity: 1;} 50% {opacity: 1;} 100% {opacity: 1;}
-	25% {opacity: 0;} 75% {opacity: 0;}
+	0%, 50%, 100% {opacity: 1;}
+	25%, 75% {opacity: 0;}
 }
 
 @-o-keyframes flash {
-	0% {opacity: 1;} 50% {opacity: 1;} 100% {opacity: 1;}
-	25% {opacity: 0;} 75% {opacity: 0;}
+	0%, 50%, 100% {opacity: 1;}
+	25%, 75% {opacity: 0;}
 }
 
 @keyframes flash {
-	0% {opacity: 1;} 50% {opacity: 1;} 100% {opacity: 1;}
-	25% {opacity: 0;} 75% {opacity: 0;}
+	0%, 50%, 100% {opacity: 1;}
+	25%, 75% {opacity: 0;}
 }
 
 .flash {
@@ -104,33 +65,33 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	animation-name: flash;
 }
 @-webkit-keyframes shake {
-	0% {-webkit-transform: translateX(0);} 100% {-webkit-transform: translateX(0);}
-	10% {-webkit-transform: translateX(-10px);} 30% {-webkit-transform: translateX(-10px);} 50% {-webkit-transform: translateX(-10px);} 70% {-webkit-transform: translateX(-10px);} 90% {-webkit-transform: translateX(-10px);}
-	20%{-webkit-transform: translateX(10px);} 40% {-webkit-transform: translateX(10px);} 60% {-webkit-transform: translateX(10px);} 80% {-webkit-transform: translateX(10px);}
+	0%, 100% {-webkit-transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
 }
 
 @-moz-keyframes shake {
-0% {-webkit-transform: translateX(0);} 100% {-webkit-transform: translateX(0);}
-	10% {-webkit-transform: translateX(-10px);} 30% {-webkit-transform: translateX(-10px);} 50% {-webkit-transform: translateX(-10px);} 70% {-webkit-transform: translateX(-10px);} 90% {-webkit-transform: translateX(-10px);}
-	20%{-webkit-transform: translateX(10px);} 40% {-webkit-transform: translateX(10px);} 60% {-webkit-transform: translateX(10px);} 80% {-webkit-transform: translateX(10px);}
+	0%, 100% {-moz-transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {-moz-transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {-moz-transform: translateX(10px);}
 }
 
 @-ms-keyframes shake {
-0% {-webkit-transform: translateX(0);} 100% {-webkit-transform: translateX(0);}
-	10% {-webkit-transform: translateX(-10px);} 30% {-webkit-transform: translateX(-10px);} 50% {-webkit-transform: translateX(-10px);} 70% {-webkit-transform: translateX(-10px);} 90% {-webkit-transform: translateX(-10px);}
-	20%{-webkit-transform: translateX(10px);} 40% {-webkit-transform: translateX(10px);} 60% {-webkit-transform: translateX(10px);} 80% {-webkit-transform: translateX(10px);}
+	0%, 100% {-ms-transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {-ms-transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {-ms-transform: translateX(10px);}
 }
 
 @-o-keyframes shake {
-0% {-webkit-transform: translateX(0);} 100% {-webkit-transform: translateX(0);}
-	10% {-webkit-transform: translateX(-10px);} 30% {-webkit-transform: translateX(-10px);} 50% {-webkit-transform: translateX(-10px);} 70% {-webkit-transform: translateX(-10px);} 90% {-webkit-transform: translateX(-10px);}
-	20%{-webkit-transform: translateX(10px);} 40% {-webkit-transform: translateX(10px);} 60% {-webkit-transform: translateX(10px);} 80% {-webkit-transform: translateX(10px);}
+	0%, 100% {-o-transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {-o-transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {-o-transform: translateX(10px);}
 }
 
 @keyframes shake {
-0% {-webkit-transform: translateX(0);} 100% {-webkit-transform: translateX(0);}
-	10% {-webkit-transform: translateX(-10px);} 30% {-webkit-transform: translateX(-10px);} 50% {-webkit-transform: translateX(-10px);} 70% {-webkit-transform: translateX(-10px);} 90% {-webkit-transform: translateX(-10px);}
-	20%{-webkit-transform: translateX(10px);} 40% {-webkit-transform: translateX(10px);} 60% {-webkit-transform: translateX(10px);} 80% {-webkit-transform: translateX(10px);}
+	0%, 100% {transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {transform: translateX(10px);}
 }
 
 .shake {
@@ -141,32 +102,32 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	animation-name: shake;
 }
 @-webkit-keyframes bounce {
-	0% {-webkit-transform: translateY(0);} 20% {-webkit-transform: translateY(0);} 50% {-webkit-transform: translateY(0);} 80% {-webkit-transform: translateY(0);} 100% {-webkit-transform: translateY(0);}
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
 	40% {-webkit-transform: translateY(-30px);}
 	60% {-webkit-transform: translateY(-15px);}
 }
 
 @-moz-keyframes bounce {
-	0% {-webkit-transform: translateY(0);} 20% {-webkit-transform: translateY(0);} 50% {-webkit-transform: translateY(0);} 80% {-webkit-transform: translateY(0);} 100% {-webkit-transform: translateY(0);}
-	40% {-webkit-transform: translateY(-30px);}
-	60% {-webkit-transform: translateY(-15px);}
+	0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+	40% {-moz-transform: translateY(-30px);}
+	60% {-moz-transform: translateY(-15px);}
 }
 
 @-ms-keyframes bounce {
-	0% {-webkit-transform: translateY(0);} 20% {-webkit-transform: translateY(0);} 50% {-webkit-transform: translateY(0);} 80% {-webkit-transform: translateY(0);} 100% {-webkit-transform: translateY(0);}
-	40% {-webkit-transform: translateY(-30px);}
-	60% {-webkit-transform: translateY(-15px);}
+	0%, 20%, 50%, 80%, 100% {-ms-transform: translateY(0);}
+	40% {-ms-transform: translateY(-30px);}
+	60% {-ms-transform: translateY(-15px);}
 }
 
 @-o-keyframes bounce {
-	0% {-webkit-transform: translateY(0);} 20% {-webkit-transform: translateY(0);} 50% {-webkit-transform: translateY(0);} 80% {-webkit-transform: translateY(0);} 100% {-webkit-transform: translateY(0);}
-	40% {-webkit-transform: translateY(-30px);}
-	60% {-webkit-transform: translateY(-15px);}
+	0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+	40% {-o-transform: translateY(-30px);}
+	60% {-o-transform: translateY(-15px);}
 }
 @keyframes bounce {
-	0% {-webkit-transform: translateY(0);} 20% {-webkit-transform: translateY(0);} 50% {-webkit-transform: translateY(0);} 80% {-webkit-transform: translateY(0);} 100% {-webkit-transform: translateY(0);}
-	40% {-webkit-transform: translateY(-30px);}
-	60% {-webkit-transform: translateY(-15px);}
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
 }
 
 .bounce {
@@ -178,42 +139,42 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 @-webkit-keyframes tada {
 	0% {-webkit-transform: scale(1);}
-	10% {-webkit-transform: scale(0.9) rotate(-3deg);} 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
-	30% {-webkit-transform: scale(1.1) rotate(3deg);} 50% {-webkit-transform: scale(1.1) rotate(3deg);} 70% {-webkit-transform: scale(1.1) rotate(3deg);} 90% {-webkit-transform: scale(1.1) rotate(3deg);}
-	40% {-webkit-transform: scale(1.1) rotate(-3deg);} 60% {-webkit-transform: scale(1.1) rotate(-3deg);} 80% {-webkit-transform: scale(1.1) rotate(-3deg);}
+	10%, 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%, 90% {-webkit-transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80% {-webkit-transform: scale(1.1) rotate(-3deg);}
 	100% {-webkit-transform: scale(1) rotate(0);}
 }
 
 @-moz-keyframes tada {
-	0% {-webkit-transform: scale(1);}
-	10% {-webkit-transform: scale(0.9) rotate(-3deg);} 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
-	30% {-webkit-transform: scale(1.1) rotate(3deg);} 50% {-webkit-transform: scale(1.1) rotate(3deg);} 70% {-webkit-transform: scale(1.1) rotate(3deg);} 90% {-webkit-transform: scale(1.1) rotate(3deg);}
-	40% {-webkit-transform: scale(1.1) rotate(-3deg);} 60% {-webkit-transform: scale(1.1) rotate(-3deg);} 80% {-webkit-transform: scale(1.1) rotate(-3deg);}
-	100% {-webkit-transform: scale(1) rotate(0);}
+	0% {-moz-transform: scale(1);}
+	10%, 20% {-moz-transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%, 90% {-moz-transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80% {-moz-transform: scale(1.1) rotate(-3deg);}
+	100% {-moz-transform: scale(1) rotate(0);}
 }
 
 @-ms-keyframes tada {
-	0% {-webkit-transform: scale(1);}
-	10% {-webkit-transform: scale(0.9) rotate(-3deg);} 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
-	30% {-webkit-transform: scale(1.1) rotate(3deg);} 50% {-webkit-transform: scale(1.1) rotate(3deg);} 70% {-webkit-transform: scale(1.1) rotate(3deg);} 90% {-webkit-transform: scale(1.1) rotate(3deg);}
-	40% {-webkit-transform: scale(1.1) rotate(-3deg);} 60% {-webkit-transform: scale(1.1) rotate(-3deg);} 80% {-webkit-transform: scale(1.1) rotate(-3deg);}
-	100% {-webkit-transform: scale(1) rotate(0);}
+	0% {-ms-transform: scale(1);}
+	10%, 20% {-ms-transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%, 90% {-ms-transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80% {-ms-transform: scale(1.1) rotate(-3deg);}
+	100% {-ms-transform: scale(1) rotate(0);}
 }
 
 @-o-keyframes tada {
-	0% {-webkit-transform: scale(1);}
-	10% {-webkit-transform: scale(0.9) rotate(-3deg);} 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
-	30% {-webkit-transform: scale(1.1) rotate(3deg);} 50% {-webkit-transform: scale(1.1) rotate(3deg);} 70% {-webkit-transform: scale(1.1) rotate(3deg);} 90% {-webkit-transform: scale(1.1) rotate(3deg);}
-	40% {-webkit-transform: scale(1.1) rotate(-3deg);} 60% {-webkit-transform: scale(1.1) rotate(-3deg);} 80% {-webkit-transform: scale(1.1) rotate(-3deg);}
-	100% {-webkit-transform: scale(1) rotate(0);}
+	0% {-o-transform: scale(1);}
+	10%, 20% {-o-transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%, 90% {-o-transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80% {-o-transform: scale(1.1) rotate(-3deg);}
+	100% {-o-transform: scale(1) rotate(0);}
 }
 
 @keyframes tada {
-	0% {-webkit-transform: scale(1);}
-	10% {-webkit-transform: scale(0.9) rotate(-3deg);} 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
-	30% {-webkit-transform: scale(1.1) rotate(3deg);} 50% {-webkit-transform: scale(1.1) rotate(3deg);} 70% {-webkit-transform: scale(1.1) rotate(3deg);} 90% {-webkit-transform: scale(1.1) rotate(3deg);}
-	40% {-webkit-transform: scale(1.1) rotate(-3deg);} 60% {-webkit-transform: scale(1.1) rotate(-3deg);} 80% {-webkit-transform: scale(1.1) rotate(-3deg);}
-	100% {-webkit-transform: scale(1) rotate(0);}
+	0% {transform: scale(1);}
+	10%, 20% {transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);}
+	100% {transform: scale(1) rotate(0);}
 }
 
 .tada {
@@ -224,7 +185,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	animation-name: tada;
 }
 @-webkit-keyframes swing {
-	20% { -webkit-transform-origin: top center; } 40% { -webkit-transform-origin: top center; } 60% { -webkit-transform-origin: top center; } 80% { -webkit-transform-origin: top center; } 100% { -webkit-transform-origin: top center; }
+	20%, 40%, 60%, 80%, 100% { -webkit-transform-origin: top center; }
 	20% { -webkit-transform: rotate(15deg); }
 	40% { -webkit-transform: rotate(-10deg); }
 	60% { -webkit-transform: rotate(5deg); }
@@ -3702,42 +3663,42 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 @-webkit-keyframes hinge {
 	0% { -webkit-transform: rotate(0); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	20% { -webkit-transform: rotate(80deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; } 60% { -webkit-transform: rotate(80deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
+	20%, 60% { -webkit-transform: rotate(80deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
 	40% { -webkit-transform: rotate(60deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
 	80% { -webkit-transform: rotate(60deg) translateY(0); opacity: 1; -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
 	100% { -webkit-transform: translateY(700px); opacity: 0; }
 }
 
 @-moz-keyframes hinge {
-	0% { -webkit-transform: rotate(0); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	20% { -webkit-transform: rotate(80deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; } 60% { -webkit-transform: rotate(80deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	40% { -webkit-transform: rotate(60deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	80% { -webkit-transform: rotate(60deg) translateY(0); opacity: 1; -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	100% { -webkit-transform: translateY(700px); opacity: 0; }
+	0% { -moz-transform: rotate(0); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }
+	20%, 60% { -moz-transform: rotate(80deg); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }
+	40% { -moz-transform: rotate(60deg); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }
+	80% { -moz-transform: rotate(60deg) translateY(0); opacity: 1; -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }
+	100% { -moz-transform: translateY(700px); opacity: 0; }
 }
 
 @-ms-keyframes hinge {
-	0% { -webkit-transform: rotate(0); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	20% { -webkit-transform: rotate(80deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; } 60% { -webkit-transform: rotate(80deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	40% { -webkit-transform: rotate(60deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	80% { -webkit-transform: rotate(60deg) translateY(0); opacity: 1; -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	100% { -webkit-transform: translateY(700px); opacity: 0; }
+	0% { -ms-transform: rotate(0); -ms-transform-origin: top left; -ms-animation-timing-function: ease-in-out; }
+	20%, 60% { -ms-transform: rotate(80deg); -ms-transform-origin: top left; -ms-animation-timing-function: ease-in-out; }
+	40% { -ms-transform: rotate(60deg); -ms-transform-origin: top left; -ms-animation-timing-function: ease-in-out; }
+	80% { -ms-transform: rotate(60deg) translateY(0); opacity: 1; -ms-transform-origin: top left; -ms-animation-timing-function: ease-in-out; }
+	100% { -ms-transform: translateY(700px); opacity: 0; }
 }
 
 @-o-keyframes hinge {
-	0% { -webkit-transform: rotate(0); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	20% { -webkit-transform: rotate(80deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; } 60% { -webkit-transform: rotate(80deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	40% { -webkit-transform: rotate(60deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	80% { -webkit-transform: rotate(60deg) translateY(0); opacity: 1; -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	100% { -webkit-transform: translateY(700px); opacity: 0; }
+	0% { -o-transform: rotate(0); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }
+	20%, 60% { -o-transform: rotate(80deg); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }
+	40% { -o-transform: rotate(60deg); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }
+	80% { -o-transform: rotate(60deg) translateY(0); opacity: 1; -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }
+	100% { -o-transform: translateY(700px); opacity: 0; }
 }
 
 @keyframes hinge {
-	0% { -webkit-transform: rotate(0); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	20% { -webkit-transform: rotate(80deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; } 60% { -webkit-transform: rotate(80deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	40% { -webkit-transform: rotate(60deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	80% { -webkit-transform: rotate(60deg) translateY(0); opacity: 1; -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
-	100% { -webkit-transform: translateY(700px); opacity: 0; }
+	0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }
+	20%, 60% { transform: rotate(80deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+	40% { transform: rotate(60deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+	80% { transform: rotate(60deg) translateY(0); opacity: 1; transform-origin: top left; animation-timing-function: ease-in-out; }
+	100% { transform: translateY(700px); opacity: 0; }
 }
 
 .hinge {
