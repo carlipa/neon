@@ -27,14 +27,14 @@
 // CSS3 Linear Gradient
 // @url http://www.w3.org/TR/css3-images/#linear-gradients
 #linear-gradient {
-	.v(@startColor: #555, @endColor: #333) {
-		background: @startColor; // Old browsers
-		background: -moz-linear-gradient(top,  @startColor 0%, @endColor 100%); // FF3.6+
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor)); // Chrome,Safari4+
-		background: -webkit-linear-gradient(top, @startColor 0%, @endColor 100%); // Chrome10+,Safari5.1+
-		background: -o-linear-gradient(top, @startColor 0%, @endColor 100%); // Opera 11.10+
-		background: -ms-linear-gradient(top, @startColor 0%, @endColor 100%); // IE10+
-		background: linear-gradient(top, @startColor 0%, @endColor 100%); // W3C
+	.v(@startColor: #555, @endColor: #333, @img: none) {
+		background: @startColor, @img; // Old browsers
+		background: @img, -moz-linear-gradient(top,  @startColor 0%, @endColor 100%); // FF3.6+
+		background: @img, -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor)); // Chrome,Safari4+
+		background: @img, -webkit-linear-gradient(top, @startColor 0%, @endColor 100%); // Chrome10+,Safari5.1+
+		background: @img, -o-linear-gradient(top, @startColor 0%, @endColor 100%); // Opera 11.10+
+		background: @img, -ms-linear-gradient(top, @startColor 0%, @endColor 100%); // IE10+
+		background: @img, linear-gradient(top, @startColor 0%, @endColor 100%); // W3C
 		filter: e("progid:DXImageTransform.Microsoft.gradient(startColorstr='%s', endColorstr='%s', GradientType=0)", @startColor, @endColor); // IE6-9
 	}
 	.h(@startColor: #555, @endColor: #333) {
@@ -78,5 +78,5 @@
 		filter: e("progid:DXImageTransform.Microsoft.gradient(startColorstr='%s', endColorstr='%s', GradientType=0)", @startColor, @endColor); // IE6-9
 	}
 }
-.linear-gradient(@startColor: #555, @endColor: #333) { #linear-gradient > .v(@startColor, @endColor); }
+.linear-gradient(@startColor: #555, @endColor: #333, @img: none) { #linear-gradient > .v(@startColor, @endColor, @img); }
 
