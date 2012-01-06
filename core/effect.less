@@ -80,3 +80,10 @@
 }
 .linear-gradient(@startColor: #555, @endColor: #333, @img: none) { #linear-gradient > .v(@startColor, @endColor, @img); }
 
+#double-border {
+	.all(@color1, @color2, @width:1px)		{ .box-shadow(inset 0px 0px 0px @width @color1); border: @width solid @color2; }
+	.bottom(@color1, @color2, @width:1px)	{ .box-shadow(inset 0px -@width 0px 0px @color1); border-bottom: @width solid @color2; }
+	.top(@color1, @color2, @width:1px)		{ .box-shadow(inset 0px @width 0px 0px @color1); border-top: @width solid @color2; }
+	.left(@color1, @color2, @width:1px)		{ .box-shadow(inset @width 0px 0px 0px @color1); border-left: @width solid @color2; }
+	.right(@color1, @color2, @width:1px)	{ .box-shadow(inset -@width 0px 0px 0px @color1); border-right: @width solid @color2; }
+}
