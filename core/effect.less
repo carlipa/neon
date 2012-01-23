@@ -24,6 +24,34 @@
 	text-shadow: @shadow;
 }
 
+// CSS3 Transform
+// @url http://www.w3.org/TR/css3-3d-transforms/#effects
+.transform(@transform-function: rotate(90deg)) {
+	-moz-transform: @transform-function;
+	-webkit-transform: @transform-function;
+	-o-transform: @transform-function;
+	transform: @transform-function;
+}
+
+// CSS3 Animation
+// @url http://www.w3.org/TR/css3-animations/#animation
+.animation(@animation) {
+	-moz-animation: @animation;
+	-webkit-animation: @animation;
+	-o-animation: @animation;
+	animation: @animation;
+}
+
+// CSS3 Animation Delay
+// @url http://www.w3.org/TR/css3-animations/#the-animation-delay-property-
+.animation-delay(@time: 1s) {
+	-moz-animation-delay: @time;
+	-webkit-animation-delay: @time;
+	-o-animation-delay: @time;
+	animation-delay: @time;
+}
+
+
 // CSS3 Linear Gradient
 // @url http://www.w3.org/TR/css3-images/#linear-gradients
 #linear-gradient {

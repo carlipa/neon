@@ -1,0 +1,78 @@
+
+#neon > .spinner {
+
+	position: relative;
+	width: 148px;
+	height: 148px;
+	left: 500px;
+
+	@duration: 500ms;
+	@count: 12;
+	div {
+		width: 12%;
+		height: 26%;
+		background: #000;
+		position: absolute;
+		left: 44.5%;
+		top: 37%;
+		opacity: 0;
+
+		.border-radius(50px);
+		.box-shadow(0 0 .4em rgba(0, 0, 0, .2em));
+		.animation(fade @duration linear infinite);
+	}
+
+	/*&::before {
+		position: absolute;
+		top: 0;
+		display: inline-block;
+		height: 148px;
+		width: 148px;
+		//content: 'prout';
+		content: '<div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div><div class="bar5"></div><div class="bar6"></div><div class="bar7"></div><div class="bar8"></div><div class="bar9"></div><div class="bar10"></div><div class="bar11"></div><div class="bar12"></div>';
+	}*/
+
+	.bar1 { .spin(1, @count, @duration); }
+	.bar2 { .spin(2, @count, @duration); }
+	.bar3 { .spin(3, @count, @duration); }
+	.bar4 { .spin(4, @count, @duration); }
+	.bar5 { .spin(5, @count, @duration); }
+	.bar6 { .spin(6, @count, @duration); }
+	.bar7 { .spin(7, @count, @duration); }
+	.bar8 { .spin(8, @count, @duration); }
+	.bar9 { .spin(9, @count, @duration); }
+	.bar10 { .spin(10, @count, @duration); }
+	.bar11 { .spin(11, @count, @duration); }
+	.bar12 { .spin(12, @count, @duration); }
+}
+
+@-webkit-keyframes fade {
+	from { opacity: 1; }
+	to { opacity: 0.25; }
+}
+@-moz-keyframes fade {
+	from { opacity: 1; }
+	to { opacity: 0.25; }
+}
+@-o-keyframes fade {
+	from { opacity: 1; }
+	to { opacity: 0.25; }
+}
+@-ms-keyframes fade {
+	from { opacity: 1; }
+	to { opacity: 0.25; }
+}
+/*
+@keyframes fade {
+	from { opacity: 1; }
+	to { opacity: 0.25; }
+}
+*/
+
+.spin(@index: 0, @count: 12, @duration: 500ms) {
+	@rotate: (@index - 1) * (360deg / @count);
+	@delay: (@index - 1) * (@duration / @count);
+	@transform: rotate(@rotate) translate(0, -142%);
+	.transform(@transform);
+	.animation-delay(@delay);
+}
