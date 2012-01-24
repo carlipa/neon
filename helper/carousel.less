@@ -1,0 +1,87 @@
+
+#neon > .carousel {
+
+	@duration: 1500ms;
+	@count: 2;
+
+	white-space: nowrap;
+	.panes {
+		width: 100% * @count;
+	}
+
+	img {
+		opacity: 1;
+	}
+
+	/*&::before {
+		position: absolute;
+		top: 0;
+		display: inline-block;
+		height: 148px;
+		width: 148px;
+		//content: 'prout';
+		content: '<div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div><div class="bar5"></div><div class="bar6"></div><div class="bar7"></div><div class="bar8"></div><div class="bar9"></div><div class="bar10"></div><div class="bar11"></div><div class="bar12"></div>';
+	}*/
+
+	.item-1 { .carousel(1, @count, @duration); }
+	.item-2 { .carousel(2, @count, @duration); }
+
+}
+
+@-webkit-keyframes neon-carousel {
+	0% {
+		//opacity: 1;
+		-webkit-transform: translateX(0%);
+		//@transform: translate(0, 0);
+		//.transform(@transform);
+	}
+	10% {
+		-webkit-transform: translateX(-100%);
+	}
+	100% {
+		//opacity: .5;
+		-webkit-transform: translateX(-100%);
+		//@transform: translate(-100%, 0);
+		//.transform(@transform);
+	}
+}
+@-moz-keyframes fade {
+	from { opacity: 1; }
+	to { opacity: 0.25; }
+}
+@-o-keyframes fade {
+	from { opacity: 1; }
+	to { opacity: 0.25; }
+}
+@-ms-keyframes fade {
+	from { opacity: 1; }
+	to { opacity: 0.25; }
+}
+/*
+@keyframes fade {
+	from { opacity: 1; }
+	to { opacity: 0.25; }
+}
+*/
+
+.carousel(@index: 0, @count: 12, @duration: 500ms) {
+	opacity: 1;
+	display: inline-block;
+	//left: (@index - 1) * -100%;
+
+	//-webkit-transition:-webkit-transform 1s cubic-bezier(0,0,.2,1) infinite;
+	//@transform: translate(-100%, 0);
+	//.transform(@transform);
+
+	//@delay: 2s;//(@index - 1) * @duration;
+	//.animation(neon-carousel @duration linear @delay infinite alternate);
+	//
+	//.animation-delay(@delay);
+
+	//@rotate: (@index - 1) * (360deg / @count);
+
+	//@transform: translate(-100%, 0);
+	//.transform(@transform);
+	//-webkit-transition-duration: 500ms;
+	//.animation-delay(@delay*2);
+}
