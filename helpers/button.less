@@ -1,7 +1,7 @@
 #ne-button {
 
 	/* Draw a button */
-	.draw(@height: 20px; @padding: 2px 15px) {
+	.draw(@height: 20px, @padding: 2px 15px) {
 		padding: @padding;
 		height: @height;
 		line-height: @height;
@@ -11,15 +11,15 @@
 	}
 
 	/* Button with an icon */
-	.iconic(@size: 20px; @padding: 2px 15px 2px 30px; @ico-margin: 2px 0 0 4px) {
+	.iconic(@size: 20px, @padding: 2px 15px 2px 30px, @ico-margin: 2px 0 0 4px) {
 		#ne-button > .draw;
-		#ne-icon > .draw(@size; @padding; @ico-margin);
+		#ne-icon > .draw(@size, @padding, @ico-margin);
 	}
 
 	/* Button with an icon and no text */
-	.iconly(@size: 20px; @padding: 2px 13px !important; @ico-margin: 2px 0 0 2px) {
+	.iconly(@size: 20px, @padding: 2px 13px !important, @ico-margin: 2px 0 0 2px) {
 		#ne-button > .draw;
-		#ne-icon > .draw(@size; @padding; @ico-margin);
+		#ne-icon > .draw(@size, @padding, @ico-margin);
 	}
 
 	/* Disable a button */

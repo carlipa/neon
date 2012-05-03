@@ -2,7 +2,7 @@
 #ne-icon {
 
 	/* Make an icon (default left) */
-	.draw(@size: 20px; @padding: 0 0 0 30px; @ico-margin: 0 0 0 0; @opacity: 1) {
+	.draw(@size: 20px, @padding: 0 0 0 30px, @ico-margin: 0 0 0 0, @opacity: 1) {
 
 		height: @size;
 		line-height: @size;
@@ -25,9 +25,9 @@
 	}
 
 	/* Right icon */
-	.right(@size: 20px; @padding: 0 30px 0 5px) {
+	.right(@size: 20px, @padding: 0 30px 0 5px) {
 
-		#ne-icon > .draw(@size; @padding); 
+		#ne-icon > .draw(@size, @padding);
 		&:after { left:auto; right:0; }
 
 	}

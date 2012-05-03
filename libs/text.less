@@ -4,7 +4,7 @@
 /* ------------------------------------------------ */
 
 /* Font parameters (Perkins) */
-.font(@weight: normal; @size: 16px; @lineheight: 20px; @fontfamily: @sans) {
+.font(@weight: normal, @size: 16px, @lineheight: 20px, @fontfamily: @sans) {
   font-family: @fontfamily;
   font-size: @size;
   font-weight: @weight;
@@ -26,7 +26,7 @@
 }
 
 /* Simulate HR with text v-centered */
-.hr-text(@color: #000; @hr: #000; @bg: #fff) {
+.hr-text(@color: #000, @hr: #000, @bg: #fff) {
 	height: 2px;
 	background-color: @hr;
 	text-align: left;
@@ -39,20 +39,4 @@
 		top: -7px;
 		padding-right: 7px;
 	}
-}
-
-/* Use a font-face */
-.font-face(@name; @path; @weight: normal; @style: normal) {
-
-	@font-face {
-		font-family: @name;
-		src: url('{@path}.eot');
-		src: url('{@path}.eot?#iefix') format('embedded-opentype'),
-			url('{@path}.woff') format('woff'),
-			url('{@path}.ttf') format('truetype'),
-			url('{@path}.svg#RudaRegular') format('svg');
-		font-weight: @weight;
-		font-style: @style;
-	}
-
 }
